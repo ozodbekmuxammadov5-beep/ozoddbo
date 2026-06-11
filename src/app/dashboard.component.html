@@ -1,0 +1,53 @@
+<div class="dashboard-page">
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Admin panel</p>
+      <h1>Dashboard</h1>
+    </div>
+    <button class="logout" (click)="logout()">Chiqish</button>
+  </header>
+
+  <section class="hero-card">
+    <div>
+      <h2>Foydalanuvchi paneliga xush kelibsiz</h2>
+      <p>Hisobotlaringizni kuzating, faoliyatni boshqarish va statistikani tekshirish.</p>
+    </div>
+    <div class="hero-cta">
+      <span>Yangiliklar</span>
+      <strong>7 yangi xabar</strong>
+    </div>
+  </section>
+
+  <section class="stats-grid">
+    <article class="stat-card" *ngFor="let item of stats">
+      <p>{{ item.label }}</p>
+      <strong>{{ item.value }}</strong>
+      <small>{{ item.note }}</small>
+    </article>
+  </section>
+
+  <section class="recent-panel">
+    <div class="panel-head">
+      <h2>Oxirgi faoliyat</h2>
+      <span>Jadval so‘ngi 24 soat</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Xizmat</th>
+          <th>Status</th>
+          <th>Summasi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of recent">
+          <td>{{ row.id }}</td>
+          <td>{{ row.service }}</td>
+          <td>{{ row.status }}</td>
+          <td>{{ row.amount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>

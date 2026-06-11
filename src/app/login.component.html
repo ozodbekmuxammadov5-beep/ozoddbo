@@ -1,0 +1,42 @@
+<div class="login-page">
+  <div class="login-card">
+    <div class="brand">
+      <div class="brand-mark">D</div>
+      <div>
+        <h1>Dashboard</h1>
+        <p>Hisobingizga kirish</p>
+      </div>
+    </div>
+
+    <form (ngSubmit)="submit()">
+      <label>
+        <span>Login</span>
+        <input
+          name="username"
+          [(ngModel)]="username"
+          placeholder="Username"
+          required
+        />
+      </label>
+
+      <label>
+        <span>Parol</span>
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="••••••••"
+          required
+        />
+      </label>
+
+      <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <button type="submit" class="primary">Kirish</button>
+    </form>
+
+    <div class="login-help">
+      Dashboardga kirish uchun foydalanuvchi nomi va parolni kiriting.
+    </div>
+  </div>
+</div>
